@@ -1,0 +1,42 @@
+{
+  "method": "leave-one-participant-out (one fully withheld expert-rated participant per fold)",
+  "supervised_model": "median imputation + training-fitted StandardScaler + Ridge(alpha=10)",
+  "baseline": "training-mean DummyRegressor",
+  "features": [
+    "top_arm_speed",
+    "side_leg_speed",
+    "side_trunk_angle"
+  ],
+  "expert_interval_sec": [
+    30,
+    60
+  ],
+  "participant_count": 4,
+  "fold_count": 4,
+  "participant_leakage": 0,
+  "targets": {
+    "floating_outcome": {
+      "range": [
+        0,
+        3
+      ],
+      "loocv_mae": 0.76688,
+      "baseline_loocv_mae": 1.33333,
+      "mean_signed_error": 0.10853,
+      "n_held_out_predictions": 4
+    },
+    "overall_score": {
+      "range": [
+        0,
+        13
+      ],
+      "loocv_mae": 2.40755,
+      "baseline_loocv_mae": 4.33333,
+      "mean_signed_error": 0.14028,
+      "n_held_out_predictions": 4
+    }
+  },
+  "source_name": "chris_expert_labels.csv",
+  "expert_label_count": 4,
+  "aligned_count": 4
+}

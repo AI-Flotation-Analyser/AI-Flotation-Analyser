@@ -1,0 +1,12 @@
+CLIENT_DASHBOARD.html - open in a web browser (offline)
+REPORT_RESULTS.md - report-ready text derived from actual run
+RUN_EVIDENCE.json - record of source and result provenance
+aggregate/ - non-identifying summary tables
+figures/ - non-identifying figures
+ml/ - Unsupervised models, holdout scores and training selection
+supervised/ - Expert-rated pilot, semi-supervised metrics and trained models
+private/all_participant_predictions.csv - full prediction table, one row per person
+private/lopo_train_test_predictions.csv - test folds, test scores and train IDs
+private/participant_review_queue.csv - prioritised videos for human label review
+private/pseudo_training_selection.csv - model-generated pseudo samples used in training
+private/ - PARTICIPANT LEVEL CSVs: do not upload to public GitHub

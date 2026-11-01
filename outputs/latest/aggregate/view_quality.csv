@@ -1,0 +1,3 @@
+camera_view,video_count,distinct_participants,median_torso_valid_fraction,arm_feature_available,leg_feature_available,unilateral_arm_records,review_required
+side_front,191,187,0.99177,182,167,181,191
+top,192,187,0.999255,190,147,15,189

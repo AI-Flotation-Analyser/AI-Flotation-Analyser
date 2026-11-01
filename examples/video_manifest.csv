@@ -1,0 +1,5 @@
+video_id,participant_id,camera_view,video_path
+P001_top_session1,P001,top,videos/P001_top_session1.mp4
+P001_side_front_session1,P001,side_front,videos/P001_side_front_session1.mp4
+P002_top_session1,P002,top,videos/P002_top_session1.mp4
+P002_side_front_session1,P002,side_front,videos/P002_side_front_session1.mp4

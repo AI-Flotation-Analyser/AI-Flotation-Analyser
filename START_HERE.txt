@@ -1,0 +1,16 @@
+AI FLOTATION ANALYSER — PORTABLE REPRODUCIBLE RELEASE
+
+1. With a completed AI_Flotation dataset:
+       python -m pip install -r requirements.txt
+       python run.py --source-root ../AI_Flotation
+
+2. With a directory containing 33-landmark CSVs and video_inventory.csv:
+       python run.py --source-root /path/to/study
+
+3. With original participant videos:
+       python -m pip install -r requirements-video.txt
+       python run.py --source-root /path/to/study --video-manifest /path/to/video_manifest.csv
+
+4. Open: outputs/latest/CLIENT_DASHBOARD.html
+
+See README.md for dataset layout, labels, outputs, tests and GitHub publication.

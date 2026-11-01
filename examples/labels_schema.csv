@@ -1,0 +1,3 @@
+participant_id,interval_start_sec,interval_end_sec,floating_outcome,overall_score
+SYNTHETIC_A,30,60,2,10
+SYNTHETIC_B,30,60,1,6

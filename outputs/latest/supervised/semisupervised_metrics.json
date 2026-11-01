@@ -1,0 +1,55 @@
+{
+  "method": "four-expert-seed semi-supervised numerical score pilot",
+  "seed": 42,
+  "features": [
+    "top_arm_speed",
+    "side_leg_speed",
+    "side_trunk_angle"
+  ],
+  "rated_participants_available": 4,
+  "unlabelled_predicted": 180,
+  "participant_rows_total": 187,
+  "not_estimable": 3,
+  "evaluation": "leave-one-participant-out, all preprocessing Ridge fit within each fold; transductive graph sees unlabelled features but not withheld labels",
+  "n_lopo_folds": 4,
+  "fold_overlap": 0,
+  "methods": {
+    "ridge": "Expert-only Ridge",
+    "baseline": "Expert mean",
+    "graph": "Graph propagation",
+    "selftrain": "Low-weight pseudo-label Ridge"
+  },
+  "targets": {
+    "floating_outcome": {
+      "lopo_mae": {
+        "ridge": 0.76688,
+        "baseline": 1.33333,
+        "graph": 1.30689,
+        "selftrain": 0.57532
+      },
+      "n_test_folds": 4,
+      "selected_pseudo_train_count": 24,
+      "target_range": [
+        0,
+        3
+      ]
+    },
+    "overall_score": {
+      "lopo_mae": {
+        "ridge": 2.40755,
+        "baseline": 4.33333,
+        "graph": 4.25434,
+        "selftrain": 1.97933
+      },
+      "n_test_folds": 4,
+      "selected_pseudo_train_count": 24,
+      "target_range": [
+        0,
+        13
+      ]
+    }
+  },
+  "pseudo_label_definition": "model-derived estimates, never expert ground truth",
+  "review_queue_size": 30,
+  "notes": "Four independent expert cases; LOPO scores reflect four test predictions per target."
+}

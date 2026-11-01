@@ -1,0 +1,3 @@
+video_id,participant_id,camera_view,width,height
+P001_top_session1,P001,top,1920,1080
+P001_side_front_session1,P001,side_front,1920,1080

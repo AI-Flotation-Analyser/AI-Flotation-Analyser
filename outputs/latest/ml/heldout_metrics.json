@@ -1,0 +1,54 @@
+{
+  "method": "participant-level 80/20 holdout of one eligible top-view video per participant",
+  "seed": 42,
+  "features": [
+    "arm_movement_speed_median_torso_s",
+    "body_path_rate_median_torso_s",
+    "body_max_excursion_torso"
+  ],
+  "cohort_participants": 141,
+  "train_participants": 112,
+  "test_participants": 29,
+  "participant_overlap": 0,
+  "scaler_fit_on": "train_only",
+  "model_selection_on": "train_only",
+  "holdout_not_used_for_selection": true,
+  "kmeans": {
+    "selected_k": 4,
+    "train_silhouette": 0.30822,
+    "test_assigned_silhouette": 0.21181,
+    "train_cluster_sizes": [
+      20,
+      22,
+      55,
+      15
+    ],
+    "test_cluster_sizes": [
+      10,
+      7,
+      11,
+      1
+    ],
+    "median_train_centroid_distance": 0.89412,
+    "median_test_centroid_distance": 1.12818,
+    "bootstrap_test_ari_median": 0.65027,
+    "bootstrap_test_ari_q10": 0.3147,
+    "bootstrap_repetitions": 30
+  },
+  "gmm": {
+    "selected_k_train_bic": 2,
+    "train_silhouette": 0.23615,
+    "test_assigned_silhouette": 0.10471,
+    "test_group_sizes": [
+      16,
+      13
+    ]
+  },
+  "train_pca_explained_variance_ratio": [
+    0.62333,
+    0.30646
+  ],
+  "evaluation_note": "Silhouette and ARI are internal/assignment-stability metrics, not supervised accuracy, expert-validated strategy, or flotation quality.",
+  "created_utc": "2026-10-31T20:52:18.092792+00:00",
+  "scikit_learn_version": "1.9.1"
+}

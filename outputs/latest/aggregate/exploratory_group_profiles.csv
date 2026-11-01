@@ -1,0 +1,9 @@
+split,kmeans_cluster,n_participants,median_arm_activity,median_body_path_rate,median_excursion
+test,1,10,0.59572,0.07718,2.19962
+test,2,7,0.21611,0.04844,0.94839
+test,3,11,0.73265,0.07187,0.81223
+test,4,1,1.01882,0.09655,0.96127
+train,1,20,0.56448,0.09728,2.166155
+train,2,22,0.23557,0.042935,0.94579
+train,3,55,0.67189,0.06543,1.09717
+train,4,15,0.93219,0.09881,1.65304

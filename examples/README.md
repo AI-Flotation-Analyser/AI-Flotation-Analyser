@@ -1,0 +1,1 @@
+The example manifest and inventory define the dataset schemas; these are illustrative names only. Replace the video paths and IDs with your own study data. `labels_schema.csv` contains illustrative scores, not expert-provided ratings.
