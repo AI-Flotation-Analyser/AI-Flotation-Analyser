@@ -53,6 +53,10 @@ AI-Flotation-Analyser/
 
 The repository brings together the team's processing pipeline, experimental scripts, model-development work and documentation. The `research/three_class/` folder retains additional side-front classification and expert-alignment experiments alongside the principal analysis described in the final report.
 
+## Exploratory model-analysis notebook
+
+The [complete model-analysis notebook](notebooks/exploratory/02_model_comparison_exploratory.ipynb) documents the team's exploratory feature selection, PCA and clustering trials, and comparisons of standard and advanced models. It preserves the analysis code while omitting saved notebook outputs and participant-level data from public GitHub. Optional packages for research experiments can be installed separately when needed.
+
 ## Working with the code
 
 The project is written in Python. To set up a local environment:
