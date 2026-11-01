@@ -1,0 +1,27 @@
+# Never publish sensitive participant-level research data
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.joblib
+*.pkl
+*.pth
+*.pt
+*.onnx
+**/private_inputs/
+**/private/
+**/data/
+**/models/
+**/model_outputs/
+**/features_*/
+**/labels_*/
+**/outputs/latest/private/
+*participant*predictions*.csv
+*expert*scores*.csv
+.venv/
+.env
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store
