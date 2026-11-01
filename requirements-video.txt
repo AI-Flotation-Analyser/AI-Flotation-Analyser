@@ -1,0 +1,4 @@
+-r requirements.txt
+# Last MediaPipe Solutions Pose release supporting this 33-landmark API
+mediapipe==0.10.21
+opencv-python-headless>=4.8,<5
