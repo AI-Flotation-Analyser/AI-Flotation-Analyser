@@ -42,8 +42,10 @@ AI-Flotation-Analyser/
 ├── research/three_class/   Additional flotation classification experiments
 ├── notebooks/exploratory/ Feature selection and modelling notebooks
 ├── tests/                  Automated software tests
-├── docs/                   Report-to-code documentation
+├── docs/                   Methods, source schemas and report mapping
 ├── run.py                  Main application entry point
+├── examples/               Sample input schemas (synthetic data)
+├── outputs/latest/         Public aggregate metrics and result summaries
 ├── requirements.txt        Core Python dependencies
 ├── requirements-video.txt  Video-processing dependencies
 └── CONTRIBUTIONS.md        Team contributions and source attribution
@@ -62,6 +64,21 @@ python -m unittest discover -s tests -v
 ```
 
 The main application starts from `run.py`; its data-processing workflow requires an appropriately structured research dataset supplied separately through authorised access. Additional video-processing dependencies are listed in `requirements-video.txt`. The notebooks and research scripts document earlier experiments and model comparisons.
+
+## Results and reproducibility evidence
+
+The repository includes aggregate results and documentation from the team release. Useful starting points are:
+
+- [Full results summary](outputs/latest/REPORT_RESULTS.md)
+- [Unsupervised evaluation](outputs/latest/ml/ML_EVALUATION.md) and [held-out metrics](outputs/latest/ml/heldout_metrics.json)
+- [Expert-scored pilot](outputs/latest/supervised/SUPERVISED_RESULTS.md) and [supervised metrics](outputs/latest/supervised/supervised_metrics.json)
+- [Semi-supervised evaluation metrics](outputs/latest/supervised/semisupervised_metrics.json)
+- [Input and output schema](docs/INPUT_AND_OUTPUT_SCHEMA.md)
+- [Methods and limitations](docs/METHODS_AND_LIMITATIONS.md)
+- [Example input files](examples/)
+- [Release evidence and privacy note](docs/RELEASE_EVIDENCE_NOTE.md)
+
+The application was tested on the supplied release fixtures: **31 automated tests passed**. These tests verify software behaviour; reported research metrics require authorised access to the underlying study data to reproduce. The original interactive dashboard, private participant-level tables and fitted model artefacts are not publicly distributed.
 
 ## Scope and limitations
 
