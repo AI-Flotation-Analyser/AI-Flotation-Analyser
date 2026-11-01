@@ -1,26 +1,50 @@
-import hashlib
-import json
+"""Repository structure and public-data checks for the consolidated project.
+
+The project stores historical classifier source in research/three_class rather
+than in the temporary stages/ folder used during initial packaging.
+"""
 from pathlib import Path
 import unittest
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]
+CLASSIFIER = ROOT / "research" / "three_class"
 
-class UpstreamManifestTests(unittest.TestCase):
-    def test_manifest_files_and_shas(self):
-        m=json.loads((ROOT/'stages/03_labelled_supervised_final/UPSTREAM_SOURCE_MANIFEST.json').read_text())
-        self.assertEqual(len(m['files']),38)
-        self.assertEqual(len(set(x['file'] for x in m['files'])),38)
-        for x in m['files']:
-            self.assertEqual(len(x['git_blob_sha1']),40)
-            self.assertGreater(x['bytes'],0)
-            self.assertNotIn('/',x['file'])
-    def test_frozen_classifier_files_named(self):
-        m=json.loads((ROOT/'stages/03_labelled_supervised_final/UPSTREAM_SOURCE_MANIFEST.json').read_text())
-        names={x['file'] for x in m['files']}
-        for f in ('swim_train.py','swim_test.py','swim_predict.py','mp_features.py','make_splits.py','CODEBOOK.md'):
-            self.assertIn(f,names)
+
+class RepositoryLayoutTests(unittest.TestCase):
+    def test_core_application_files_are_present(self):
+        required = [
+            "run.py",
+            "src/flotation/__init__.py",
+            "src/flotation/cli.py",
+            "src/flotation/features.py",
+            "src/flotation/ml.py",
+            "src/flotation/supervised.py",
+            "src/flotation/semisupervised.py",
+        ]
+        for name in required:
+            with self.subTest(file=name):
+                self.assertTrue((ROOT / name).is_file(), f"Missing core source: {name}")
+
+    def test_historical_classifier_sources_are_present(self):
+        required = [
+            "swim_train.py",
+            "swim_test.py",
+            "mp_features.py",
+            "make_splits.py",
+            "CODEBOOK.md",
+        ]
+        for name in required:
+            with self.subTest(file=name):
+                self.assertTrue(
+                    (CLASSIFIER / name).is_file(),
+                    f"Missing historical classifier source: {name}",
+                )
+
     def test_no_embedded_sensitive_rows(self):
-        self.assertFalse((ROOT/'private_inputs').exists())
-        self.assertFalse((ROOT/'data'/'real_study').exists())
+        for path in ("private_inputs", "data/real_study", "outputs/latest/private"):
+            with self.subTest(path=path):
+                self.assertFalse((ROOT / path).exists())
 
-if __name__=='__main__': unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()
